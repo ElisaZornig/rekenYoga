@@ -1,0 +1,252 @@
+/* Algemene body styling */
+body {
+    font-family: sans-serif;
+    margin: 0 2em;
+    color: #3d3d3d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f7f7f7;
+    flex-direction: column;
+}
+#start-game{
+    display: none;
+}
+
+/* Algemene sectie instellingen */
+section {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 80%;
+    max-width: 1200px;
+}
+
+/* De afbeelding van de webcam */
+video {
+    display: block;
+    transform: rotateY(180deg);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 640px;
+}
+.video-countdown {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2rem;
+    width: 30%;
+    text-align: center;
+}
+
+/* Het canvas voor de webcam-overlay */
+#webcam {
+    display: block;
+    transform: rotateY(180deg);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 640px;
+}
+
+/* Het canvas voor de webcam-overlay */
+#output_canvas {
+    z-index: 1;
+    position: absolute;
+    pointer-events: none;
+    transform: rotateY(180deg);
+    border-radius: 10px;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 640px;
+}
+
+/* Layout voor de camera en video */
+.videoView {
+    position: relative;
+    width: 100%;
+    margin-top: 30px; /* Zorgt dat de video onder de som komt */
+    flex: 1
+}
+
+/* De tekst en de som */
+#question {
+    font-size: 4em; /* Groter voor een betere zichtbaarheid */
+    font-weight: bold;
+}
+
+/* Countdown stijl */
+/*#countdown {*/
+/*    font-size: 3em;*/
+/*    font-weight: bold;*/
+/*    margin-top: 20px;*/
+/*    color: #f44336;*/
+/*    text-align: center;*/
+/*    font-family: 'Arial', sans-serif;*/
+/*    !*padding: 10px;*!*/
+/*    border-radius: 10px;*/
+/*    background-color: rgba(255, 255, 255, 0.8); !* Lichte achtergrond voor de countdown *!*/
+/*    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);*/
+/*    min-width: 100px;*/
+/*    flex: 1*/
+/*}*/
+
+#countdown {
+    visibility: hidden;
+    position: relative;
+    margin: auto;
+    margin-top: 100px;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+}
+
+#countdown-number {
+    color: red;
+    flex: 1;
+    font-size: 3rem;
+}
+
+svg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    transform: rotateY(-180deg) rotateZ(-90deg);
+}
+
+svg circle {
+    stroke-dasharray: 113px;
+    stroke-dashoffset: 0px;
+    stroke-linecap: round;
+    stroke-width: 2px;
+    stroke: red;
+    fill: none;
+    animation: countdown 10s linear infinite forwards;
+}
+
+@keyframes countdown {
+    from {
+        stroke-dashoffset: 0px;
+    }
+    to {
+        stroke-dashoffset: 113px;
+    }
+}
+/* Antwoorden sectie */
+#answers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 50vw
+}
+#correct-text {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Vergroot de knoppen met afbeeldingen */
+.answer-btn {
+    background-color: #008CBA;
+    color: white;
+    padding: 25px 30px; /* Meer padding voor grotere knoppen */
+    margin: 15px;
+    font-size: 5em; /* Grotere tekst voor antwoorden */
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+    display: none;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /*justify-content: center;*/
+    width: 20vw; /* Grotere knoppen */
+    height: 15vw; /* Grotere knoppen */
+}
+
+.answer-btn:hover {
+    background-color: #006f8a;
+}
+.prediction-image{
+    height: 30vw;
+    align-self: center;
+}
+
+.pose-image {
+    width: 8rem; /* Grotere afbeeldingen */
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+/* Resultaat afbeelding */
+#result {
+    width: 20vw; /* Grotere afbeelding voor het resultaat */
+    margin-top: 20px;
+    display: none; /* Alleen zichtbaar bij resultaat */
+    object-fit: cover;
+}
+
+/* Knoppen stijl */
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 15px 30px; /* Grotere knoppen */
+    margin: 10px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+.image-countdown{
+    display: flex;
+    flex-direction: column;
+}
+
+/* Flexbox voor de hele sectie */
+@media screen and (max-width: 768px) {
+    section {
+        width: 100%;
+        padding: 15px;
+    }
+
+    #webcam {
+        width: 100%;
+        height: auto;
+    }
+}
+#nextQuestion{
+    display: none;
+}
+.evt-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly; /* Plaats video links, countdown in het midden, antwoorden rechts */
+    align-items: center;
+    width: 90vw;
+}
+.header-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15rem
+}
+.empty{
+    visibility: hidden;
+    width: 30%;
+
+}
+.titleContainer{
+    flex: 2
+}
+

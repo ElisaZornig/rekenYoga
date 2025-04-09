@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediaPipe Handpose</title>
+    <link rel="stylesheet" href="./style.css">
+    <script defer type="module" src="./script.js"></script>
+    <script src="https://unpkg.com/ml5@1/dist/ml5.min.js"></script>
+</head>
+
+<body>
+
+<div class="header-container">
+    <div class="videoView">
+        <video id="webcam" autoplay playsinline></video>
+        <canvas class="output_canvas" id="output_canvas" width="320" height="240"></canvas>
+    </div>
+    <div class="titleContainer">
+        <h1>Test je rekenkennis!</h1>
+        <h2>Doe de juiste poses voor het juiste antwoord</h2>
+        <div id="question"></div> <!-- Hier komt de som -->
+    </div>
+
+        <div id="countdown-number"></div>
+
+</div>
+<button id="webcamButton">STARTWEBCAM</button>
+<div class="evt-container">
+    <div class="video-countdown">
+        <div class="image-countdown">
+            <div id="correct-text"></div>
+            <img src="" id="result" class="prediction-image"/>
+        </div>
+    </div>
+    <div id="answers">
+        <button class="answer-btn" id="answer1">
+            <img src="" alt="Tree Pose" class="pose-image"/>
+        </button>
+        <button class="answer-btn" id="answer2">
+            <img src="" alt="Warrior Pose" class="pose-image"/>
+        </button>
+        <button class="answer-btn" id="answer3">
+            <img src="" alt="Stretch Pose" class="pose-image"/>
+        </button>
+        <button class="answer-btn" id="answer4">
+            <img src="" alt="Pray Pose" class="pose-image"/>
+        </button>
+    </div>
+</div>
+
+<button id="start-game">Start game</button>
+
+</body>
+</html>
