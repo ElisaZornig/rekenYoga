@@ -198,7 +198,7 @@ async function predictWebcam() {
             //     });
             //     drawingUtils.drawConnectors(landmark, PoseLandmarker.POSE_CONNECTIONS);
             // }
-            canvasCtx.restore();
+            // canvasCtx.restore();
         });
     }
 
@@ -241,7 +241,7 @@ function loadQuestion(){
     `;
     });
 
-    let count = 10;
+    let count = 5;
     countdownEl.textContent = count;
     const countdownInterval = setInterval(() => {
         count--;

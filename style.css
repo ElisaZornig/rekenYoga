@@ -43,7 +43,7 @@ video {
 }
 
 /* Het canvas voor de webcam-overlay */
-#webcam {
+#webcam, #output_canvas {
     display: block;
     transform: rotateY(180deg);
     border-radius: 10px;
